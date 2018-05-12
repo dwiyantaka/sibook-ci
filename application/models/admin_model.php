@@ -9,6 +9,11 @@ class Admin_model extends CI_Model{
     //Codeigniter : Write Less Do More
   }
 
+  public function view_rapat(){
+    return $this->db->query('CALL `jadwal_rapat`();')->result();
+    //return $this->db->get()->free_result();
+  }
+
   public function view_ruangan(){
     return $this->db->get('data_ruangan')->result();
   }
@@ -51,6 +56,7 @@ class Admin_model extends CI_Model{
     $this->db->from('jadwal_rapat');
     $this->db->join('data_bidang', 'jadwal_rapat.id_bidang = data_bidang.id_bidang');
     $this->db->join('data_ruangan', 'jadwal_rapat.id_ruang = data_ruangan.id_ruang');
+    $this->db->where('status', '1');
 
     return $this->db->get()->result();
   }

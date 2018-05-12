@@ -4,9 +4,16 @@
 
 <div class="content-wrapper">
 	<div class="content">
-		<div class="container">
+		<div class="row">
 			<?php $this->load->view('modal'); ?>
-			<div class="box box-danger" id="listCal"></div>
+			<div class="col-md-6">
+				<div class="box box-danger" id="calendar"></div>	  
+			</div>
+			<div class="col-md-6">
+				<div class="box box-danger" id="listCal"></div>
+			</div>
+
+
 		</div>
 	</div>
 </div>

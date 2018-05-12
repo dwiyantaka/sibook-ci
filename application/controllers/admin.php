@@ -34,6 +34,17 @@ class Admin extends CI_Controller{
     $this->load->view('input_jadwal', $data);
   }
 
+  function pembatalan_rapat(){
+    if ($this->session->userdata('level') == 'petugas') {
+      redirect('admin');
+    }
+
+    $data['title'] = 'Pembatalan Jadwal Rapat';
+    //$data['rapat'] = $this->admin->view_rapat();
+
+    $this->load->view('data_rapat', $data);
+  }
+
   function data_ruangan(){
     if ($this->session->userdata('level') == 'petugas') {
       redirect('admin');

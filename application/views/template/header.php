@@ -68,13 +68,12 @@
 
       <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class=""><a href="<?php echo base_url(); ?>admin/input_jadwal">Input Jadwal Rapat</a>
-          </li>
+          <li class=""><a href="<?php echo base_url(); ?>admin/input_jadwal">Input Jadwal Rapat</a></li>
 
           <?php if ($this->session->userdata('level') == 'admin') { ?>
 
-          <li class=""><a href="<?php echo base_url(); ?>admin/laporan">Laporan</a>
-          </li>
+          <li class=""><a href="<?php echo base_url(); ?>admin/pembatalan_rapat">Pembatalan</a></li>
+          <li class=""><a href="<?php echo base_url(); ?>admin/laporan">Laporan</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Master<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">

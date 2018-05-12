@@ -8,8 +8,8 @@
       });
 
       $('#calendar').fullCalendar({
-        defaultView : 'listWeek',
-        //height : 590,
+        defaultView : 'month',
+        height : 490,
         header    : {
           left  : 'prev,next today',
           center: 'title',
@@ -24,9 +24,8 @@
 
         eventSources    : [
           {
-            url  : 'queryCode/getJadwal.php',
+            url  : base_url+'admin/getJadwal',
             type : 'POST',
-            color: '#f56954', //red
             textColor    : 'white',
           },
         ],
@@ -46,7 +45,7 @@
           }
         });
       $('#listCal').fullCalendar({
-        defaultView: 'listWeek',
+        defaultView: 'listMonth',
         height : 490,
         eventSources    : [
           {
