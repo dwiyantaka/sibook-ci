@@ -35,15 +35,17 @@
               var awal = moment(event.start).format("HH:mm");
               var akhir = moment(event.end).format("HH:mm");
 
-              $('#modalTitle').html(event.title);
+              $('#modalTitle').find('h3').remove();
+              $('#modalTitle').append('<h3 class="modal-title" style="color: '+event.color+' ">'+event.title+'</h3>');
               $('#bidang').html('Rapat Bidang : <b>'+event.bidang+'</b>');
               $('#jam').html('Pukul <b>'+awal+' s/d '+akhir+'</b>');
               $('#ruang').html('di <b>'+event.ruang+'</b>');
               $('#keterangan').html(event.description);
-              $('#eventUrl').attr('href',event.url);
+              //$('#eventUrl').attr('href',event.url);
               $('#fullCalModal').modal();
           }
         });
+
       $('#listCal').fullCalendar({
         defaultView: 'listMonth',
         height : 490,
@@ -55,6 +57,16 @@
             textColor    : 'white',
           },
         ],
+        eventRender: function(event, element){
+          var el = element.html();
+          //element.html("<div style='width:90%;float:left;'>"+el+"</div><div style='text-align:right;'>"+event.ruang+"</div>");
+          var els = $(element).find('td.fc-list-item-title');
+          var app = '<td class="fc-widget-content">'+event.ruang+'</td>';
+          var app2 = '<div class="pull-right"><em>'+event.ruang+'</em></div>';
+          //els.after(app);
+          els.append(app2);
+        },
+
         eventClick:  function(event, jsEvent, view) {
               var awal = moment(event.start).format("HH:mm");
               var akhir = moment(event.end).format("HH:mm");
@@ -66,7 +78,7 @@
               $('#jam').html('Pukul <b>'+awal+' s/d '+akhir+'</b>');
               $('#ruang').html('di <b>'+event.ruang+'</b>');
               $('#keterangan').html(event.description);
-              $('#eventUrl').attr('href',event.url);
+              //$('#eventUrl').attr('href',event.url);
               $('#fullCalModal').modal();
           }
       })

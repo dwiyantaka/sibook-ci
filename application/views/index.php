@@ -7,7 +7,7 @@
 		<div class="row">
 			<?php $this->load->view('modal'); ?>
 			<div class="col-md-6">
-				<div class="box box-danger" id="calendar"></div>	  
+				<div class="box box-danger" id="calendar"></div>
 			</div>
 			<div class="col-md-6">
 				<div class="box box-danger" id="listCal"></div>
